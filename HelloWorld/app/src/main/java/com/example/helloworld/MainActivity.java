@@ -13,8 +13,6 @@ public class MainActivity extends AppCompatActivity {
         /// 设置视图
         setContentView(R.layout.activity_main);
 
-        TextView tv_one = findViewById(R.id.tv_one);
-        tv_one.setText("Hello World");
 
     }
 }
