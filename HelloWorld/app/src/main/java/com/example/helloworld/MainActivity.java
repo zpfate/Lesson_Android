@@ -24,13 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = findViewById(R.id.btn);
         // 点击事件
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Log.e(TAG,"onClick");
-            }
-        });
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Log.e(TAG,"onClick");
+//            }
+//        });
 
         btn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
