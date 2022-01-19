@@ -20,11 +20,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         /// textView
-//        setContentView(R.layout.activity_main);
+        setContentView(R.layout.image_view);
 //        TextView tv_one = findViewById(R.id.tv_one);
 //        tv_one.setText("leo");
 
-        createEditText();
+//        createEditText();
     }
 
 
