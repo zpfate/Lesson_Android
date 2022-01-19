@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,11 +21,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         /// textView
-        setContentView(R.layout.image_view);
+        setContentView(R.layout.progress_bar);
 //        TextView tv_one = findViewById(R.id.tv_one);
 //        tv_one.setText("leo");
 
-//        createEditText();
     }
 
 
@@ -78,5 +78,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         Log.e(TAG,"onClick");
+    }
+
+
+
+
+    public void showOrHide(View view) {
+
+        ProgressBar progressBar = findViewById(R.id.pb);
+        if (progressBar.getVisibility() == View.GONE) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
+    }
+
+    public void load(View view) {
+        ProgressBar progressBar = findViewById(R.id.pb_h);
+        int progress = progressBar.getProgress();
+        progress += 10;
+        progressBar.setProgress(progress);
+        Log.e(TAG, "进度: " +  progressBar.getProgress());
     }
 }
