@@ -1,6 +1,7 @@
 package com.example.notification;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 
 import android.app.Notification;
@@ -13,6 +14,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +24,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        createToolBar();
+    }
+
+
+    /// toolbar
+    public void createToolBar() {
+        setContentView(R.layout.tool_bar);
+        Toolbar toolBar = findViewById(R.id.tool_bar);
+        toolBar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("zpfate","toolBar被点击了");
+            }
+        });
+    }
+
+    /// 创建通知
+    public void  createNotification() {
         setContentView(R.layout.activity_main);
         /// 创建通知中心管理类
         manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -48,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 /// 点击自动取消
 //                .setAutoCancel(true)
                 .build();
-
     }
 
     public void sendNotification(View view) {
